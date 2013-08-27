@@ -107,10 +107,25 @@ p {
 footer {
   text-align: center;
 }
-footer p {
-  color: #f2f2f2;
-  margin: 0;
+
+footer.inner {
+  padding-top: 5px;
 }
+
+footer div {
+  display: inline-block;
+  margin: 0 auto;
+  color: #f2f2f2;
+  text-align: left;
+  font-size: small;
+}
+
+footer div div {
+  display: inline-block;
+  padding: 5px;
+}
+footer div div.left { float: left; }
+footer div div.right { float: right; }
 
 a {
   text-decoration: none;
