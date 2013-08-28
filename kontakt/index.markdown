@@ -17,6 +17,6 @@ jonas@sematic.se
 Styrelseledamot
 leo@sematic.se
 
-##### Anton Blad
+<bf>Anton Blad</bf>
 Systemingenjör
 anton@sematic.se
