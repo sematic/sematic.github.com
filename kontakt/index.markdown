@@ -5,18 +5,16 @@ title: Kontakt och Organisation
 
 Vill du eller din organisation veta mer? Kontakta oss gärna på <a href="mailto:{{ site.email }}">{{ site.email }}</a> för mer information.
 
-##### Mirsad Čirkić
-Styrelseledamot och Ordförande
-mirsad@sematic.se
+<b>Mirsad Čirkić</b>: mirsad@sematic.se
+<br>Styrelseledamot och Ordförande
 
-##### Jonas Ehrs
-Styrelseledamot
-jonas@sematic.se
 
-##### Leo Bergnéhr
-Styrelseledamot
-leo@sematic.se
+<b>Jonas Ehrs</b>: jonas@sematic.se
+<br>Styrelseledamot 
 
-<b>Anton Blad</b>
-Systemingenjör
-anton@sematic.se
+
+<b>Leo Bergnéhr</b>: leo@sematic.se
+<br>Styrelseledamot
+
+<b>Anton Blad</b>: anton@sematic.se
+<br>Systemingenjör
