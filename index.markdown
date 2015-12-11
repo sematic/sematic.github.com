@@ -3,7 +3,7 @@ layout: default
 title: Sematic
 ---
 
-Sematic är ett nystartat företag vars affärsidé går ut på att effektivisera verksamheten hos skiftgående organisationer som behöver vara i kontinuerlig drift. Mer specifikt erbjuder vi lösningar som automatiskt schemalägger anställdas pass på bästa möjliga sätt i samråd med verksamheten. Det kan vara mer fokus på önskemål ifrån de anställda som ska schemaläggas, på att verksamheten ska drivas med hög drifteffektivitet, eller en kombination av båda. Ni specificerar, vi levererar.
+Vår affärsidé går ut på att effektivisera verksamheten hos skiftgående organisationer som behöver vara i kontinuerlig drift. Vi erbjuder lösningar som automatiskt schemalägger anställdas pass på bästa möjliga sätt i samråd med verksamheten. Det kan vara mer fokus på önskemål ifrån de anställda som ska schemaläggas, på att verksamheten ska drivas med hög drifteffektivitet, eller en kombination av båda.
       
 ### Hur gör vi och varför?</h3>
 
