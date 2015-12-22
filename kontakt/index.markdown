@@ -3,7 +3,7 @@ layout: default
 title: Kontakt och Organisation
 ---
 
-Vill du eller din organisation veta mer? Kontakta oss gärna på 013-4651 222 eller på <a href="mailto:{{ site.email }}">{{ site.email }}</a> för mer information.
+Vill du eller din organisation veta mer? Kontakta oss gärna på <a href="mailto:{{ site.email }}">{{ site.email }}</a> för mer information.
 
 **Mirsad Čirkić**: <a href="mailto:mirsad@sematic.se">mirsad@sematic.se</a> 
 <br>Styrelseordförande
@@ -17,4 +17,7 @@ Vill du eller din organisation veta mer? Kontakta oss gärna på 013-4651 222 el
 <br>Styrelseledamot
 
 **Anton Blad**: <a href="mailto:anton@sematic.se">anton@sematic.se</a> 
-<br>Systemingenjör
+<br>Styrelseledamot
+
+**Mikael Lundberg**: <a href="mailto:mikael@sematic.se">mikael@sematic.se</a>
+<br>Stystemingenjör
