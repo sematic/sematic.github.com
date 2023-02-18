@@ -1,0 +1,7 @@
+<article class="article-main" {{ if .Get `id` }} id="{{ .Get `id` }}"{{ end }}>
+{{ if .Get `heading` }}<div class="article-headline"><h2 class="article-heading">{{ .Get `heading` }}</h2>
+{{ with .Get `subheading` }}<span class="article-subheading">{{ . }}</span>{{ end }}
+</div>
+{{ end }}
+<div class="article-content {{ .Get `class` }}">{{ .Inner }}</div>
+</article>

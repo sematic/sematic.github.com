@@ -1,0 +1,10 @@
+<article class="cta-mini">
+<h2 class="article-heading">{{ with .Get `heading` }}{{ . }} {{ else }}{{ .Site.Params.Ctamini.Title }}{{ end }}</h2>
+{{ with .Get `subheading` }}
+<span class="article-subheading">{{ . }}</span>
+{{ end }}
+<div class="link-wrap">
+<a class="link link--btn" href="{{ with .Get `permalink` }}{{ . }} {{ else }}{{ .Site.Params.Ctamini.RelPermalink }}{{ end }}">{{ with .Get `button` }}{{ . }} {{ else }}{{ .Site.Params.Ctamini.Button }}{{ end }}</a>
+</div>
+<img class="cta-mini__parallax" src='{{ "/images/ui/cta-mini-bg.svg" | relURL }}' />
+</article>

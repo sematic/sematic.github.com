@@ -1,0 +1,50 @@
+baseURL = ""
+languageCode = "sv"
+title = "Sematic"
+relativeURLs = true
+
+[params]
+description = "Sematic"
+copyright = "Sematic AB"
+madeby = "Design och utveckling: <a target='_blank' href='https://skyhook.se'>Skyhook Designkollektiv</a>"
+
+[params.company]
+    titleAddress = "Adress"
+    titleMail = "E-post"
+    titleOrgnr = "Org.nr."
+    titlePages = "Länk"
+    address = ["Sematic AB", "Brigadgatan 16", "587 58 Linköping"]
+    mail = "info@sematic.se"
+    orgnr = "556940-0764"
+[menu]
+    [[menu.main]]
+        name = "Gå till TESSA"
+        url = "https://tessa.sematic.se"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingIDType = "github-ascii"
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false

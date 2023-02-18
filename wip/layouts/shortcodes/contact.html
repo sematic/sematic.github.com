@@ -1,0 +1,13 @@
+<div class="contact">
+{{ if .Get `image` }}
+<div class="contact__img">
+<img src="/images/{{ .Get `image` }}" alt="{{ .Get `name` }} - {{ .Get `role` }}" />
+</div>
+{{ end }}
+<div class="contact__desc">
+<h3>{{ .Get `name` }}</h3>
+<p>{{ .Get `email` }}<br/>
+{{ .Get `role` }}
+</p>
+</div>
+</div>

@@ -1,0 +1,7 @@
+<article class="cta-mini-2">
+<h2 class="article-heading">{{ with .Get `heading` }}{{ . }} {{ else }}{{ .Site.Params.Cta.Heading }}{{ end }}</h2>
+<div class="link-wrap">
+<a class="link link--btn" href="{{ with .Get `permalink` }}{{ . }} {{ else }}{{ .Site.Params.Cta.Permalink }}{{ end }}">{{ if .Get `button` }}{{ .Get `button` }} {{ else }}{{ .Site.Params.Cta.Button }}{{ end }}</a>
+</div>
+<img class="cta-mini-2__parallax" src='{{ "/images/ui/cta-mini-2-bg.svg" | relURL }}' />
+</article>

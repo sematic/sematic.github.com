@@ -1,0 +1,8 @@
+{{ define "main"  }}
+
+{{ $articles := split .Content "/////" }}
+{{range $index, $articles }}
+    {{ $index | safe.HTML }}
+{{ end }}
+
+{{ end }}

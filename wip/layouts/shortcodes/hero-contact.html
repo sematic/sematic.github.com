@@ -1,0 +1,22 @@
+<div class="hero">
+<div class="hero__headline">
+<span class="caption">{{ .Get `caption` }}</span>
+<h1>{{ .Get `title` }}</h1>
+<span class="subtitle">{{ .Get `subtitle` }}</span>
+</div>
+<div class="hero__content hero__content--autoheight layout-flex hero-wrap {{ .Get `imgclass` }}">
+<div class="hero__desc is-bigger">
+{{ .Inner }}
+</div>
+<div class="hero__boxes">
+<div class="hero__box">
+<h4>{{ .Site.Params.Company.titleAddress }}</h4>
+{{ delimit .Site.Params.Company.Address "<br>"}}
+</div>
+<div class="hero__box">
+<h4>{{ .Site.Params.Company.titleMail }}</h4>
+<span class="ico-mail">{{ .Site.Params.Company.mail | safeHTML }}</span>
+</div>
+</div>
+</div>
+</div>

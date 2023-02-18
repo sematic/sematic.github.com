@@ -1,0 +1,76 @@
+/*
+================================================================================
+FOOTER
+================================================================================
+*/
+
+footer {
+
+    @include container;
+    color: $color-greyish;
+
+    .company-info {
+        @include padding;
+        background: $gradient-blue-light;
+        @include layout-flex;
+        justify-content: space-between;
+        
+        &__item {
+            width: 49%;
+            font-size: 0.8em;
+            line-height: 1.5em;
+            margin-bottom: 1em;
+            
+            @include breakpoint(tablet) {
+                width: 14%;
+            }
+            
+            h4 {
+                margin: 0 0 0.5em 0;
+            }
+            
+            ul,
+            ul li {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+            
+            a {
+                color: $color-greyish;
+                text-decoration: none;
+            }
+        }
+        
+        &__item:first-of-type {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            
+            @include breakpoint(tablet) {
+                padding-right: 2%;
+                width: 38%;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+                line-height: 1.1em;
+                font-weight: 500;
+                margin-left: 0.75em;
+            }
+        }
+        
+    }
+    
+    .copyright {
+        @include layout-flex;
+        font-size: 0.7em;
+        justify-content: space-between;
+        
+        a {
+            color: $color-blue-darker;
+        }
+    }
+
+}

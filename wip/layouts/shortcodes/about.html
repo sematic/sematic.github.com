@@ -1,0 +1,24 @@
+<div class="about layout-flex layout-flex--dot-cols">
+<div class="about__desc">
+{{ if  .Get `heading` }}
+<h2>{{ .Get `heading` }}</h2>
+{{ end }}
+{{ .Inner }}
+</div>
+{{ if .Get `image` }}
+<div class="about__img">
+<img src="/images/{{ .Get `image` }}" alt="{{ if .Get `heading` }}{{ .Get `heading` }}{{ else }} {{ .Get `alt` }}{{ end }}" />
+</div>
+{{ end }}
+{{ if .Get `word1` }}
+<div class="about__words">
+<div class="values">
+<h3>{{ .Get `ourwords`}}</h3>  
+<span class="value">{{ .Get `word1` }}</span>
+<span class="value">{{ .Get `word2` }}</span>
+<span class="value">{{ .Get `word3` }}</span>
+<span class="value">{{ .Get `word4` }}</span>
+</div>
+</div>
+{{ end }}
+</div>

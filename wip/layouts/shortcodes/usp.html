@@ -1,0 +1,18 @@
+<div id="{{ .Get `heading` | anchorize }}" class="usp layout-flex layout-flex--dot-cols layout-cols--6-6">
+<div class="usp__desc">
+<h3>{{ .Get `heading` | safeHTML }}</h3>
+<h4>{{ .Get `subheading` | safeHTML }}</h4>
+{{ .Inner }}
+</div>
+{{ if .Get `image` }}
+<div class="usp__img">
+<img src="/images/{{ .Get `image` }}" alt="{{ .Get `heading` }}" />
+</div>
+{{ end }}
+{{ if .Get `video` }}
+<div class="usp__video js-video-scroll">
+<video playsinline autoplay muted src="{{ .Site.BaseURL }}/videos/{{ .Get `video` }}" type="video/mp4">
+</video>
+</div>
+{{ end }}
+</div>

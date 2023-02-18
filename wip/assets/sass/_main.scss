@@ -1,0 +1,850 @@
+/*
+================================================================================
+MAIN CONTENT STYLES 
+
+main
+hero 
+article-main 
+    + about
+    + contact 
+    - reference 
+    - usp 
+    - steps
+cta-mini
+cta
+usp-list
+usp
+infographic
+steps
+
+================================================================================
+*/
+
+main {
+    @include header-margin;
+    
+}
+
+
+main p {
+    margin-top: 0;
+    margin-bottom: 1em;
+//    max-width: 600px;
+
+    a {
+        text-decoration: underline;
+        color: $color-blue;
+    }
+}
+
+.article-headline {
+    margin-bottom: 3em;
+}
+
+.article-heading {
+    font-size: 2em;
+}
+
+.article-subheading {
+    font-size: 1.2em;
+    display: block;
+    margin-top: -1em;
+    @include breakpoint(tablet) {
+        font-size: 1.4em;
+        margin-top: -0.75em;
+    }
+}
+
+/*
+================================================================================
+* HERO
+================================================================================
+*/
+
+.hero {
+//    background: url(../images/ui/header-graphic-2.png) no-repeat 120% 100px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: -5em;
+    padding-bottom: 5em;
+
+    &-wrap {
+        @include container;
+    }
+
+    &__headline {
+        text-align: center;
+        padding: 5em 0 1.5em 0;
+        max-width: 800px;
+        margin: 0 auto;
+        .caption {
+            font-size: 1em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .subtitle {
+            display: block;
+            font-size: 2.2em;
+            line-height: 1.1em;
+            margin-top: -0.85em;
+            
+        }
+        
+        @include breakpoint(desktop) {
+            padding: 4em 0 ;
+        }
+    }
+    
+    &__content {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        
+        @include breakpoint(desktop) {
+            min-height: 400px;
+            flex-direction: row;
+            
+            & > div {
+                flex: 0 0 49%;
+            }
+        }
+        
+        &--autoheight {
+            @include breakpoint(desktop) {
+                min-height: 300px;
+            }
+        }
+        
+    }
+
+    &__desc {
+        padding: 0;
+        max-width: 600px;
+        ul,
+        ul li {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        ul {
+        margin-bottom: 1em;
+            li {
+                position: relative;
+                font-size: 1.3em;
+                line-height: 1.2em;
+                display: inline-flex;
+                align-items: center;
+                margin-left: 25px;
+                @include clearit;
+
+                &::before {
+                @include pseudo;
+                width: 19px;
+                height: 21px;
+                left: -25px;
+                background: url(../images/ui/ico-check.svg) left center no-repeat;
+                }
+                
+                @include breakpoint(tablet) {
+                    font-size: 1.5em;
+                    
+                    li::before {
+                        margin-top: 0;
+                    }
+                }
+            }
+        
+        }
+        
+        .link-wrap {
+            text-align: center;
+            margin-bottom: 2em;
+            @include breakpoint(desktop) {
+                text-align: left;
+            }
+        }
+    }
+    
+    @include breakpoint(desktop) {
+        padding: 3em 0;
+    }
+    
+    &__img {
+        img {
+            @include responsive-img;
+            @include breakpoint(desktop) {
+                max-width: none;
+            }
+        }
+        @include breakpoint(desktop) {
+        position: absolute;
+        height: calc(100% + 3em);
+        left: 50%;
+        bottom: -3em;
+        }
+    }
+    
+    &__boxes {
+        @include layout-flex;
+        justify-content: space-between;
+        width: 100%;
+        @include breakpoint(tablet) {
+            width: 60%;
+        }
+        & > div {
+            flex: 0 0 49%;
+        }
+        
+        .hero__box {
+            color: white;
+            padding: 2em;
+            box-sizing: border-box;
+            background: $gradient-blue-v;
+            margin-bottom: 1em;
+            
+            h4 {
+                margin: 0;
+            }
+            
+            &:nth-of-type(2) {
+                background: $gradient-blue-darker-v;
+            }
+        }
+        
+    }
+    
+    .has-illustration {
+        @include breakpoint(desktop) {
+            margin-top: -5em;
+        }
+        .hero__img {
+            position: static;
+            margin-bottom: -3em;
+            max-width: 600px;
+            text-align: center;
+            @include breakpoint(desktop) {
+                max-width: none;
+                text-align: left;
+            }
+            
+            img {
+                @include responsive-img;
+                max-width: 90%;
+            }
+        }
+    }
+}
+
+.button-area {
+    display: block;
+}
+
+/*
+================================================================================
+* ARTICLE
+================================================================================
+*/
+
+article {
+    margin-bottom: 1.5em;
+    
+    img {
+        @include responsive-img;
+    }
+}
+
+// Article main 
+.article-main {
+    @include padding;
+    @include container;
+    box-shadow: $shadow;
+    background: white;
+    position: relative;
+}
+
+// Article content
+.article-content {
+    position: relative;
+    z-index: 2;
+}
+
+// Centered articles
+.cta-mini,
+.cta-mini-2,
+.cta,
+.usp-list {
+    text-align: center;
+    p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.article-heading,
+.article-subheading {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $container-width-mini;
+}
+
+// Padded articles
+.usp-list {
+    @include padding;
+    background: $gradient-blue-light;
+} 
+
+// Containers
+// .cta,
+.usp-list__items {
+    @include container;
+}
+
+// Containers
+.cta-mini {
+    @include padding-bigger;
+}
+
+
+// 
+
+// Flex layouts 
+
+    .usp-list__items,
+    .usp__item,
+    .article-contacts,
+    {
+        @include layout-flex; 
+    }
+    
+    .contact
+    {
+        @include layout-flexrow; 
+    }
+
+    .usp__item:nth-of-type(even)
+     {
+        flex-direction: row-reverse;
+    }
+
+/*
+USP list
+--------------------------------------------------------------------------------
+*/
+.usp-list {
+    
+    &__items {
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    
+    &__item {
+        flex: 0 0 calc(50% - 10px);
+        background: white;
+        margin-bottom: 20px;
+        padding: 5em 2em;
+        box-sizing: border-box;
+        box-shadow: $shadow-blue;
+        
+        @include breakpoint(desktop) {
+            flex: 0 0 calc(25% - 16px);
+            margin-bottom: 24px;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+    
+        &:nth-of-type(1) {
+            background: url(../images/ui/usp-list_bg-1.jpg);
+            background-size: cover;
+        }
+        
+        &:nth-of-type(7) {
+            background: url(../images/ui/usp-list_bg-2.jpg);
+            background-size: cover;
+        }
+    
+    }
+    
+    &__desc {
+        min-height: 140px;
+    }
+}
+
+/*
+CTA 
+--------------------------------------------------------------------------------
+*/
+.cta {
+    color: white;
+    background: black url(../images/ui/bg-cta.png) no-repeat center;
+}
+
+
+/*
+Infographic
+--------------------------------------------------------------------------------
+*/
+
+.infographic {
+    flex-direction: column;
+        @include breakpoint(phablet) {
+            flex-direction: column;
+        }
+        @include breakpoint(tablet) {
+            flex-direction: row;
+        }    
+    
+    & > div {
+        flex: 0 0 49%;
+    }
+    
+    &__graphs {
+        @include layout-flexrow;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        padding-bottom: 3em;
+        
+        &::before {
+            @include pseudo;
+            height: 100px;
+            width: 300px;
+            bottom: 0;
+            background: $gradient-blue-light;
+            border-radius: 50%;
+            z-index: -1;
+            
+            @include breakpoint(desktop) {
+                width: 80%;
+            }
+        }
+    
+        .graph {
+            width: 60px;
+            transform-origin: bottom;
+            // 1100h 
+            height: $infographic-height;
+            background: $gradient-red-v;
+            border-radius: 6px;
+            margin: 0 10px;
+            @include breakpoint(phablet) {
+                margin: 0 15px;    
+            }
+            
+            &:nth-of-type(2) {
+                background: $gradient-yellow-v;
+                // 800h 
+                height: calc(#{$infographic-height} * (800 / 1100));
+            }
+            
+            &:nth-of-type(3) {
+                background: $gradient-blue-v;
+                // 250h 
+                height: calc(#{$infographic-height} * (250 / 1100));
+            }
+        } 
+    }
+    
+    &__legends {
+        margin-top: 2em;
+        margin-left: 1em;
+        
+        @include breakpoint(tablet) {
+            margin-top: 0;
+            margin-left: 0;
+        }
+        p {
+            
+            position: relative;
+            
+            &::before {
+                @include pseudo;
+                left: - 25px;
+                top: 0.4em;
+                background: $gradient-red-v;
+                width: 14px;
+                height: 14px;
+                border-radius: 4px;
+            }
+        
+            &:nth-of-type(2)::before {
+                background: $gradient-yellow-v;
+            }
+            
+            &:nth-of-type(3)::before {
+                background: $gradient-blue-v;
+            }
+        }
+        
+    }
+    
+    .note {
+        font-size: 0.8em;
+        display: block;
+        margin-top: 1em;
+    }
+}
+
+/*
+Contacts
+--------------------------------------------------------------------------------
+*/
+.article-contacts {
+    justify-content: space-between;
+}
+
+.contact {
+    flex: 0 0 49%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+    
+    h3 {
+        margin-top: 0;
+    }
+    
+    &__img {
+        max-width: 90px;
+        
+    }
+    
+    &__desc {
+        flex: 0 0 calc(100% - 105px);
+    }
+}
+
+/*
+Steps
+--------------------------------------------------------------------------------
+*/
+.steps {
+    
+    .step {
+        position: relative;
+        margin: 0 auto 3em;
+        max-width: $container-width-mini;
+        padding: 0 0 0 1.5em;
+        border-left: 4px solid $color-green;
+        
+        @include breakpoint(tablet) {
+            padding: 0 0 0 3em;
+        }
+        
+        &::before {
+            @include pseudo;
+            border-radius: 50%;
+            background: white;
+            width: 22px;
+            height: 22px;
+            border: 8px solid $color-green;
+            left: -13px;
+            top: -1px;
+        }
+        
+        &:first-of-type,
+        &:first-of-type::before {
+            border-color: $color-green;
+        }
+        
+        &:nth-of-type(2),
+        &:nth-of-type(2)::before {
+            border-color: $color-yellow-darker;
+        }
+        
+        &:nth-of-type(3),
+        &:nth-of-type(3)::before {
+            border-color: $color-red;
+        }
+        
+        &:nth-of-type(4),
+        &:nth-of-type(4)::before {
+            border-color: $color-blue;
+        }
+        
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        
+        h3 {
+            line-height: 1em;
+            font-size: 1.3em;
+            position: relative;
+            top: -1px;
+            @include breakpoint(tablet) {
+                top: -3px;
+            }
+        }
+        
+    }
+}
+
+
+/*
+Jobs
+--------------------------------------------------------------------------------
+*/
+.jobs {
+    
+    .job {
+        position: relative;
+        margin: 0 auto 3em;
+        max-width: $container-width-mini;
+        padding: 0 0 0 1.5em;
+        border-left: 4px solid $color-green;
+        
+        @include breakpoint(tablet) {
+            padding: 0 0 0 3em;
+        }
+        
+        &::before {
+            @include pseudo;
+            border-radius: 50%;
+            background: white;
+            width: 22px;
+            height: 22px;
+            border: 8px solid $color-green;
+            left: -13px;
+            top: -1px;
+        }
+        
+        &:first-of-type,
+        &:first-of-type::before {
+            border-color: $color-green;
+        }
+        
+        &:nth-of-type(2),
+        &:nth-of-type(2)::before {
+            border-color: $color-yellow-darker;
+        }
+        
+        &:nth-of-type(3),
+        &:nth-of-type(3)::before {
+            border-color: $color-red;
+        }
+        
+        &:nth-of-type(4),
+        &:nth-of-type(4)::before {
+            border-color: $color-blue;
+        }
+        
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        
+        h3 {
+            line-height: 1em;
+            font-size: 1.3em;
+            position: relative;
+            top: -1px;
+            @include breakpoint(tablet) {
+                top: -3px;
+            }
+        }
+        
+    }
+}
+
+
+/*
+USP
+--------------------------------------------------------------------------------
+*/
+.usp {
+    p {
+        max-width: 600px;
+    }
+    
+    h3 {
+        font-size: 1.6em;
+        margin-bottom: 0.25em;
+        color: $color-blue;
+        position: relative;
+        
+        &::before {
+            @include pseudo;
+            width: 0;
+            height: 0;
+            left: -13px;
+            border-top: solid $color-blue 10px;
+            border-bottom: solid transparent 10px;
+            border-right: solid transparent 10px;
+        }
+    }
+    
+    h4 {
+        font-size: 1.2em;
+        margin: 0 0 1.5em 0;
+    }
+}
+/*
+About
+--------------------------------------------------------------------------------
+*/
+
+.about {
+    
+    &__img,
+    &__words {
+        text-align: center;
+        margin-bottom: 1em;
+        @include breakpoint(desktop) {
+            margin-bottom: 2em;
+        }
+    }
+    
+    &__img img {
+        @include responsive-img;
+    }
+    
+    &__words {
+        font-family: $font-extra;
+        
+        .values {
+            padding: 3em 2em;
+            margin-top: 3em;
+            background: $gradient-blue-light;
+            position: relative;
+            
+            @include breakpoint(tablet) {
+                margin: 2em;
+            }
+            
+            &::before {
+                @include pseudo;
+                @include h-center;
+                top: -3.2em;
+                width: 200px;
+                height: 80px;
+                background: url(../images/ui/graphic-squares.svg) no-repeat center bottom;
+                background-size: 200px auto;
+            }
+            
+            h3 {
+                font-size: 1em;
+                text-transform: uppercase;
+                color: $color-greyish;
+                margin-bottom: 1em;
+                padding-bottom: 0.5em;
+                position: relative;
+                
+                &::after {
+                    @include pseudo;
+                    width: 50px;
+                    height: 1px;
+                    background: $color-greyish;
+                    left: 50%;
+                    margin-left: -25px;
+                    bottom: 0;
+                }
+            }
+        
+            .value {
+                display: block;
+                line-height: 1em;
+                padding: 0.25em 0;
+                font-size: 1.4em;
+                color: $color-blue-darker;
+            }
+            
+        }
+    }
+}
+
+/*
+Reference
+--------------------------------------------------------------------------------
+*/
+
+.reference {
+    
+    &__quote {
+        text-align: center;
+        font-family: $font-extra;
+            
+            .cite {
+                font-size: 1em;
+                line-height: 1em;
+                display: block;
+                color: $color-greyish;
+                padding-top: 0.5em;
+                position: relative;
+                
+                &::after {
+                    @include pseudo;
+                    width: 50px;
+                    height: 1px;
+                    background: $color-greyish;
+                    left: 50%;
+                    margin-left: -25px;
+                    top: 0;
+                }
+            }
+        
+            blockquote {
+                background: url(../images/ui/graphic-quote.svg) top center no-repeat;
+                display: block;
+                line-height: 1em;
+                padding: 1.6em 0 0.8em 0;
+                margin-bottom: 0.5em;
+                font-size: 1.5em;
+                color: $color-blue-darker;
+                
+                @include breakpoint(desktop) {
+                    font-size: 2em;
+                    padding: 1.4em 2em 0 2em;
+                }
+            }
+            
+        }
+}
+
+/*
+CTA-mini  
+--------------------------------------------------------------------------------
+*/
+
+.cta-mini {
+    position: relative;
+//    background: url(../images/ui/cta-mini-bg.svg) top center no-repeat;
+    &__parallax {
+        left: 50%;
+        z-index: -1;
+        transform: translateX(-50%); 
+        top: -20%;
+        position: absolute;
+        width: 100%;
+        max-width: 1300px;
+        height: auto;
+    }
+}
+
+.cta-mini-2 {
+    position: relative;
+//    background: url(../images/ui/cta-mini-bg.svg) top center no-repeat;
+    &__parallax {
+        left: 50%;
+        z-index: -1;
+        transform: translateX(-50%); 
+        top: -50%;
+        position: absolute;
+        width: 100%;
+        max-width: 1300px;
+        height: auto;
+    }
+}
+
+/*
+CTA-mini  
+--------------------------------------------------------------------------------
+*/
+
+.cta-mini-2 {
+    @include padding;
+}

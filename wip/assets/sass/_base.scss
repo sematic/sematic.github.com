@@ -1,0 +1,576 @@
+/*
+================================================================================
+VARIABLES & mixins
+================================================================================
+*/
+
+// Breakpoint mixin
+@mixin breakpoint($point) {
+    @if $point == mobileonly {
+         @media (max-width: 37.5em)  { @content ; }
+      }
+    @else if $point == phablet {
+        @media (min-width: 37.5em)  { @content ; }
+     }
+     @else if $point == belowtablet {
+      @media (max-width: 49.999em) { @content ; }
+   }
+      @else if $point == tablet {
+       @media (min-width: 50em) { @content ; }
+    }
+    @else if $point == laptop {
+      @media (min-width: 64em) { @content ; }
+    }
+    @else if $point == desktop {
+      @media (min-width: 80em) { @content ; }
+    }
+
+    @else if $point == portrait {
+      @media (orientation : portrait) { @content ; }
+    }
+    @else if $point == landscape {
+      @media (orientation : landscape) { @content ; }
+    }
+}
+
+// Colors
+
+
+// Blocks
+    $container-width: 1300px;
+    $container-width-mini: 700px;
+    $container-padding: 3em 2em;
+
+// Fonts
+// Colors
+    $color-yellow: #f6ea29;
+    $color-yellow-darker: #edbb2c;
+    $color-blue: #2997e4;
+    $color-blue-darker: #1d82c8;
+    $color-green: #5cad2a;
+    $color-red: #df3409;
+    $color-red-lighter: #ea5634;
+    $color-greyish: #495566;
+
+    $gradient-blue-light: linear-gradient(to right, rgba(41, 151, 228, 0.16), rgba(41, 151, 228, 0.08));
+    $gradient-blue-light-v: linear-gradient(to bottom, rgba(41, 151, 228, 0.16), rgba(41, 151, 228, 0));
+    $gradient-red-v: linear-gradient(to bottom, $color-red-lighter, $color-red);
+    $gradient-yellow-v: linear-gradient(to bottom, $color-yellow, $color-yellow-darker);
+    $gradient-blue-v: linear-gradient(to bottom, $color-blue, $color-blue-darker);
+    $gradient-blue-darker-v: linear-gradient(to bottom, darken($color-blue, 10), darken($color-blue-darker, 10));
+    $gradient-green-v: linear-gradient(to bottom, #5eaf2c, #438432);
+
+// Fonts
+    $font-main: 'Ubuntu', Roboto, Calibri, sans-serif;
+    $font-extra: 'Ubuntu Condensed', Roboto, Calibri, sans-serif;
+
+// Shadow
+    $shadow: 0 0 2rem rgba(86, 160, 168, 0.20);
+    $shadow-mini:  0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    $shadow-blue:  0 0.2rem 0.5rem rgba(86, 160, 168,  0.2);
+
+// Main inner container paddings
+    $h-padding-mob : 1.5em;
+    $v-padding-mob : 2.5em;
+    $h-padding : 4em;
+    $v-padding : 4em;
+    
+// Infographic height 
+    $infographic-height: 400px;
+    
+// Minimum header height 
+    $header-height-min: 60px;
+
+// Header height margin
+@mixin header-margin {
+    margin-top: 5em;
+}
+
+/*
+* Used for elements with ::after and ::before pseudo elements
+*/
+
+@mixin pseudo {
+  position: absolute;
+  content: "";
+}
+
+@mixin h-center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// Transition mixin
+@mixin transition {
+  transition: all 0.25s linear;
+}
+
+// Clearfix mixin
+@mixin clearit {
+     &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+@mixin vertical-align {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin full-img {
+    width: 100%;
+    height: auto;
+}
+
+@mixin responsive-img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+@mixin container {
+    max-width: $container-width;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+@mixin padding {
+    margin-left: auto;
+    margin-right: auto;
+    padding: $v-padding-mob $h-padding-mob;
+    @include breakpoint(desktop) {
+        padding: $v-padding $h-padding ;
+    }
+}
+
+@mixin padding-bigger {
+    margin-left: auto;
+    margin-right: auto;
+    padding:  calc(2 * #{$v-padding-mob}) $h-padding-mob;
+    @include breakpoint(desktop) {
+        padding: calc(2 * #{$v-padding}) $h-padding ;
+    }
+}
+
+@mixin padding-h {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $h-padding-mob;
+    padding-right: $h-padding-mob;
+    @include breakpoint(desktop) {
+        padding-left: $h-padding ;
+        padding-right: $h-padding ;
+    }
+}
+
+@mixin layout-flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    @include breakpoint(phablet) {
+        flex-direction: row;
+    }
+}
+
+@mixin layout-flexrow {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/*
+====================================================================
+GENERAL BLOCKS
+====================================================================
+*/
+
+html {
+    box-sizing: border-box;
+    // Stop highlighting everything
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    // Add smooth scroll behaviour where it works
+    scroll-behavior: smooth;
+    // Scroll top offset
+    @include breakpoint(phablet) {
+    scroll-snap-padding-top: 5em;
+    scroll-padding-top: 5em;
+    }
+}
+
+body {
+    margin: 0 1em 1em 1em;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 300;
+    font-family: $font-main;
+    background: $gradient-blue-light-v no-repeat left top;
+//    background: $gradient-blue-light-v no-repeat left top, url(../images/ui/header-graphic-1.svg) no-repeat -2em top;
+    background-size: 100% 600px, 500px auto;
+    @include breakpoint(phablet) {
+      font-size: 16px;
+    }
+    @include breakpoint(tablet) {
+      font-size: 17px;
+    }
+}
+
+.bg__graphic {
+    position: absolute;
+    @include breakpoint(laptop) {
+            position: fixed;
+    }
+    
+    &--1 {
+        left: -5em;
+        top: -10em;
+        width: 400px;
+        height: auto;
+        @include breakpoint(laptop) {
+            left: -1em;
+            top: 2em;
+        }
+    }
+    
+    &--2 {
+        right: -10em;
+        top: 3em;
+        display: none;
+        @include breakpoint(laptop) {
+            display: block;
+        }
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.loading {
+    @include transition;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: $color-blue;
+    z-index: -1;
+    outline: 2px solid $color-blue;
+    outline-offset: 0.4em;
+    visibility: visible;
+    opacity: 1;
+    animation-duration: 0.75s;
+    animation-name: loadingPulse;
+    animation-iteration-count: 5;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+h1 {
+    font-family: $font-main;
+    font-size: 2.3em;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.1em;
+    margin-top: 0;
+        @include breakpoint(phablet) {
+            font-size: 2.8em;
+        }
+      @include breakpoint(desktop) {
+        font-size: 3.5em;
+    }
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: 500;
+  font-family: $font-main;
+  line-height: 1.1em;
+  margin-top: 0;
+  @include breakpoint(phablet) {
+    font-size: 1.8em;
+  }
+}
+
+h3 {
+  font-size: 1em;
+  margin: 1em 0 0.25em 0;
+  @include breakpoint(phablet) {
+    font-size: 1.1em;
+  }
+}
+
+h1, 
+h2, 
+h3, 
+h4,
+strong {
+    font-weight: 500;
+}
+
+/*
+==================================================================================
+GENERAL LINKS & BUTTONS
+==================================================================================
+*/
+
+.button-wrap {
+    margin-top: 1em;
+}
+
+.link {
+    @include transition;
+    font-family: $font-extra;
+    font-size: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+
+    &--external {
+        position: inline-block;
+        &::after {
+            content:" 🡥";
+            font-size: 0.8em;
+        }
+    }
+
+    &--internal {
+        position: inline-block;
+        position: relative;
+        padding: 1em 0;
+        color: $color-blue;
+    /*    &::after {
+            content:" 🡢";
+            font-size: 0.8em;
+        }
+    */
+        &::before {
+            @include pseudo;
+            @include transition;
+            background: $color-blue;
+            width: 30px;
+            left: 50%;
+            margin-left: -15px;
+            height: 1px;
+            bottom: 0.75em;
+        }
+        
+        &:hover::before {
+            width: 100%;
+            margin-left: -50%;
+        }
+        
+        
+    }
+
+    &--btn {
+        position: relative;
+        padding: 0.8em 3em;
+        border-radius: 2em;
+        color: white;
+        box-shadow: $shadow-blue;
+    //  background: linear-gradient( $color-gold, darken($color-gold, 20));
+        background: $gradient-blue-v;
+        
+        &::after {
+            @include pseudo;
+            @include transition;
+            width: 0;
+            height: 1px;
+            bottom: 0.75em;
+            left: 50%;
+            margin-left: 0;
+            background: white;
+        }
+        
+    /*    &:hover {
+            background: $gradient-blue-darker-v;
+        }
+    */    
+        &:hover::after {
+            width: 30px;
+            margin-left: -15px;
+        }
+    }
+
+}
+
+/*
+==================================================================================
+Reusable layouts
+==================================================================================
+*/
+
+.layout-flex {
+    @include layout-flex;
+}
+
+.layout-flex--dot-cols {
+        justify-content: space-between;
+        margin-bottom: calc(2 * #{$v-padding-mob});
+        position: relative;
+        flex-direction: column-reverse;
+        align-items: center;
+        min-height: calc(280px + 3em); 
+    
+        &::before {
+            @include pseudo;
+            z-index: -1;
+            height: 280px;
+            width: 280px;
+            background: url(../images/ui/bg-element.svg) no-repeat right bottom;
+            background-size: auto 280px;
+            bottom: -$v-padding-mob;
+            right: -$h-padding-mob;
+            
+            @include breakpoint(phablet) {
+                height: 400px;
+                width: 400px;
+                background-size: auto 400px;
+            }
+            @include breakpoint(desktop) {
+                bottom: -$v-padding;
+                right: -$h-padding;
+            }    
+        }
+        
+        &:nth-of-type(even)::before {
+            left: -$h-padding-mob;
+            right: auto;
+            background: url(../images/ui/bg-element-even.svg) no-repeat left bottom;
+            background-size: auto 280px;
+            
+            @include breakpoint(phablet) {
+                background-size: auto 400px;
+            }
+            
+            @include breakpoint(desktop) {
+                left: -$h-padding;
+                right: auto;
+            }    
+        }
+        
+        @include breakpoint(phablet) {
+            flex-direction: row;
+            &:nth-of-type(even) {
+                flex-direction: row-reverse;
+            }
+        }
+        
+        @include breakpoint(desktop) {
+        margin-bottom: calc(2 * #{$v-padding});
+        }
+        
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        
+        & > div {
+            flex: 0 0 100%;
+            @include breakpoint(phablet) {
+                flex: 0 0 49%;
+            }
+        }    
+    }
+    
+.layout-cols--8-4 {
+    & > div {
+        flex: 0 0 100%;
+    }   
+    
+    @include breakpoint(desktop) {
+        & > div:nth-of-type(even) {
+            flex: 0 0 62%;
+        }
+        & > div:nth-of-type(odd) {
+            flex: 0 0 36%;
+        }
+    }
+}
+
+.layout-cols--6-6 {
+    & > div {
+        flex: 0 0 100%;
+    }   
+    
+    @include breakpoint(desktop) {
+        & > div {
+            flex: 0 0 49%;
+        }
+    }
+}
+
+/*
+==================================================================================
+States and modifications
+==================================================================================
+*/
+
+.is-centered {
+  text-align: center;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
+.is-bold {
+  font-weight: bold;
+}
+
+.is-bigger {
+    font-size: 1.2em;
+}
+
+.is-italic {
+  font-style: italic;
+}
+
+.is-hidden {
+  @include transition;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.is-visible,
+ {
+    @include transition;
+    opacity: 1;
+    visibility: visible;
+}
+
+.is-not-displayed {
+    display: none;
+}
+
+.is-sticky {
+  position: sticky;
+}
+
+.is-wrapped {
+    @include container;
+    @include padding;
+}
+
+.is-padded {
+    @include padding;
+}
+
+.has-shadow {
+    box-shadow: $shadow;
+}
+
+.has-bg--white {
+    background: white;
+}

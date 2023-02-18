@@ -1,0 +1,16 @@
+<div class="hero">
+<div class="hero__headline">
+<span class="caption">{{ .Get `caption` }}</span>
+<h1>{{ .Get `title` }}</h1>
+<span class="subtitle">{{ .Get `subtitle` }}</span>
+</div>
+<div class="hero__content layout-flex hero-wrap {{ .Get `imgclass` }}">
+<div class="hero__desc">
+{{ .Inner }}
+</div>
+<div class="hero__img">
+{{ $img := .Get `img` }}
+{{ if $img }}<img src='{{ (printf "/images/%s" $img) | relURL }}'>{{ end }}
+</div>
+</div>
+</div>

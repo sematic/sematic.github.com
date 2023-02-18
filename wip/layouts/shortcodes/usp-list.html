@@ -1,0 +1,6 @@
+<article class="usp-list">
+{{ if .Get `heading` }}<div class="article-headline"><h2 class="article-heading">{{ .Get `heading` }}</h2>
+{{ with .Get `subheading` }}<span class="article-subheading">{{ . }}</span>{{ end }}
+</div>{{ end }}
+<div class="article-content usp-list__items">{{ .Inner }}</div>
+</article>

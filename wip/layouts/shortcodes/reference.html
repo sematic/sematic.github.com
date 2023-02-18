@@ -1,0 +1,13 @@
+<div class="reference layout-flex layout-flex--dot-cols">
+<div class="reference__desc">
+{{ .Inner }}
+</div>
+<div class="reference__quote">
+<blockquote>
+{{ .Get `quote` | safeHTML }}
+</blockquote>
+{{ if .Get `cite` }}
+<span class="cite">{{ .Get `cite` }}</span>
+{{ end }}
+</div>
+</div>

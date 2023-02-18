@@ -1,0 +1,47 @@
+<footer>
+	<div class="company-info">
+	   <div class="company-info__item">
+		   	<a href="{{ $.Site.BaseURL }}"><img src='{{ "/images/logos/sematic-symbol-darkgrey.svg" | relURL }}' alt="Sematic logotyp" /></a>
+			<span class="tagline">{{ .Site.Params.Description }}</span>
+		</div>
+		<div class="company-info__item">
+			<h4>{{ .Site.Params.Company.titlePages }}</h4>
+			{{ if .Site.Menus.main }}
+				 <ul class="nav--sitemap">
+					{{ $current := .}}
+					{{ range .Site.Menus.main }}
+					{{ $active := or ($current.IsMenuCurrent "main" .) }}
+					<li class='{{if $active }}current{{ end }}'>
+						<a class="" href="{{ .URL }}">
+						{{ .Name }}
+						</a>
+					</li>
+					{{ end }}
+				</ul>
+			{{ end }}
+		</div>
+		<div class="company-info__item">
+			<h4>{{ .Site.Params.Company.titleAddress }}</h4>
+			{{ delimit .Site.Params.Company.Address "<br>"}}
+		</div>
+		<div class="company-info__item">
+			
+			<h4>{{ .Site.Params.Company.titleMail }}</h4>
+			<span class="ico-mail">{{ .Site.Params.Company.mail | safeHTML }}</span>
+		</div>
+		<div class="company-info__item">
+			<h4>{{ .Site.Params.Company.titleOrgnr }}</h4>
+			<span>{{ .Site.Params.Company.Orgnr }}</span>
+		</div>
+	</div>
+	<p class="copyright">
+		<span>© {{ now.Format "2006"}} {{ if .Site.Params.Copyright }}{{.Site.Params.Copyright | safeHTML}}{{ end }} 
+			| <a href='{{ "/personuppgiftspolicy/" | relURL }}'>Personuppgiftspolicy</a>
+		</span>
+		{{ with .Site.Params.Madeby }}
+		<span>
+			{{ . | safeHTML}}
+		</span>
+		{{ end }}
+	</p>
+</footer>

@@ -1,0 +1,10 @@
+<div class="usp-list__item">
+{{ if .Get `heading` }}
+<div class="usp-list__desc">
+<h3>{{ .Get `heading` }}</h3>
+<p>{{ .Get `desc` }}</p>
+</div>
+{{ $anchor := .Get `heading` | anchorize }}
+<div class="btn-wrap"><a class="link link--internal" href='{{ "/schemasystem/" | relURL }}#{{ $anchor }}'>{{ .Site.Params.Ui.Readmore }}</a></div>
+{{ end }}
+</div>

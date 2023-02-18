@@ -1,0 +1,7 @@
+<article class="steps">
+<div class="is-wrapped">
+{{ with .Get `heading` }}
+<div class="article-headline"><h2 class="article-heading">{{ . }}</h2>{{ end }}{{ with .Get `subheading` }}<span class="article-subheading">{{ . }}</span></div>{{ end }}
+{{ .Inner }}
+</div>
+</article>
