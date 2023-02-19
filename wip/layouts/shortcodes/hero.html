@@ -10,7 +10,9 @@
 </div>
 <div class="hero__img">
 {{ $img := .Get `img` }}
-{{ if $img }}<img src='{{ (printf "/images/%s" $img) | relURL }}'>{{ end }}
+{{ $imgcap := .Get `imgcaption` }}
+{{ if $img }}<img src='{{ (printf "/images/%s" $img) | relURL }}' style="max-width: 100%">{{ end }}
+{{ if $imgcap }}<div style="text-align: center; font-size: larger; width: 100%; color: #585895; margin-top: -20px">{{$imgcap}}</div>{{ end }}
 </div>
 </div>
 </div>

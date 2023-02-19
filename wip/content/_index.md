@@ -5,9 +5,10 @@ description = "Vi utvecklar TESSA"
 
 {{% hero 
     caption=""
-    title="Vi"
+    title="Vi på Sematic"
     subtitle="hjälper stora organisationer med komplexa bemmaningsstrukturer"
     img="referenser.png"
+	 imgcaption="ordna ett ostrukturerat trassel till en sammanhängande struktur"
     imgclass="has-illustration"
     %}}
 
@@ -17,8 +18,6 @@ description = "Vi utvecklar TESSA"
     <li>lång erfarenhet av införanden</li><br>
     <li>oerhört kundorienterat utvecklingssätt</li>
 </ul>
-
-ordna ett ostrukturerat trassel till en sammanhängande struktur
 
 {{% /hero %}}
 
@@ -30,9 +29,9 @@ ordna ett ostrukturerat trassel till en sammanhängande struktur
     image="omoss-systemutvecklare.jpg" 
     alt="Arbeta som systemutvecklare!"
 %}}
-### Känner du igen dig till höger? 
-Vi söker systemutvecklare! Idén föddes och utvecklades med stöd av sjukvårdspersonal på landstinget i Östergötland. Vi har lyssnat lyhört på deras problem och lösningsförslag och med Sematics fokus på kundnära utveckling har det bidragit oerhört mycket till skapandet av våra användarvänliga verktyg.
-{{% link url="/kontakt/" title="Ansök nu!" %}}
+### Ser du din bildskärm i bilden? 
+Vi söker systemutvecklare! Vi jobbar med kundnära utveckling och skapar användarvänliga verktyg som ger direktverkande nytta. Det finns mer.
+{{% link url="https://arbetsformedlingen.se/platsbanken/annonser/27179699" title="Ansök nu!" %}}
 
 {{% /about %}}
 
@@ -40,9 +39,9 @@ Vi söker systemutvecklare! Idén föddes och utvecklades med stöd av sjukvård
     image="omoss-systemexpert.jpg" 
     alt="Arbeta som systemexpert!"
 %}}
-### Gillar du lösa problem och träffa människor?
-Vi söker systemexperter! Idén föddes och utvecklades med stöd av sjukvårdspersonal på landstinget i Östergötland. Vi har lyssnat lyhört på deras problem och lösningsförslag och med Sematics fokus på kundnära utveckling har det bidragit oerhört mycket till skapandet av våra användarvänliga verktyg.
-{{% link url="/kontakt/" title="Ansök nu!" %}}
+### Gillar du Sudoku, gillar du att träffa människor?
+Vi söker systemexperter! Vi jobbar med att lösa invecklade problem åt våra kunder, tillsammans med våra kunder. Klicka vidare för att läsa mer.
+{{% link url="https://arbetsformedlingen.se/platsbanken/annonser/27179803" title="Ansök nu!" %}}
 
 {{% /about %}}
 
