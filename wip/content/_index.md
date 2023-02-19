@@ -6,7 +6,7 @@ description = "Vi utvecklar TESSA"
 {{% hero 
     caption=""
     title="Vi på Sematic"
-    subtitle="hjälper stora organisationer med komplexa bemmaningsstrukturer"
+    subtitle="hjälper stora organisationer med komplex bemmaning"
     img="referenser.png"
 	 imgcaption="ordna ett ostrukturerat trassel till en sammanhängande struktur"
     imgclass="has-illustration"

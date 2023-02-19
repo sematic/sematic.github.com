@@ -12,7 +12,7 @@ madeby = "Design och utveckling: <a target='_blank' href='https://skyhook.se'>Sk
     titleAddress = "Adress"
     titleMail = "E-post"
     titleOrgnr = "Org.nr."
-    titlePages = "Länk"
+    titlePages = ""
     address = ["Sematic AB", "Brigadgatan 16", "587 58 Linköping"]
     mail = "info@sematic.se"
     orgnr = "556940-0764"
