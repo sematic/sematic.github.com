@@ -29,7 +29,7 @@ description = "Vi utvecklar TESSA"
     image="omoss-systemutvecklare.jpg" 
     alt="Arbeta som systemutvecklare!"
 %}}
-### Ser du din bildskärm i bilden? 
+### Ser du din bildskärm häri? 
 Vi söker systemutvecklare! Vi jobbar med kundnära utveckling och skapar användarvänliga verktyg som ger direktverkande nytta. Det finns mer.
 {{% link url="https://arbetsformedlingen.se/platsbanken/annonser/27838972" title="Ansök nu!" %}}
 
