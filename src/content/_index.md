@@ -31,7 +31,7 @@ description = "Vi utvecklar TESSA"
 %}}
 ### Ser du din bildskärm häri?
 Vi söker systemutvecklare! Vi jobbar med kundnära utveckling och skapar användarvänliga verktyg som ger direktverkande nytta. Det finns mer.
-{{% link url="https://arbetsformedlingen.se/platsbanken/annonser/29210727" title="Ansök nu!" %}}
+{{% link url="https://arbetsformedlingen.se/platsbanken/annonser/29366596" title="Ansök nu!" %}}
 
 {{% /about %}}
 
