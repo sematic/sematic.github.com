@@ -41,7 +41,7 @@ Vi söker systemutvecklare! Vi jobbar med kundnära utveckling och skapar använ
 %}}
 ### Gillar du Sudoku, gillar du att träffa människor?
 Vi söker systemexperter! Vi jobbar med att lösa invecklade problem åt våra kunder, tillsammans med våra kunder. Klicka vidare för att läsa mer.
-{{% link url="https://arbetsformedlingen.se/platsbanken/annonser/29353481" title="Ansök nu!" %}}
+{{% link url="mailto:rekrytering@sematic.se?subject=Intresse för rollen Systemexpert" title="Visa intresse" %}}
 
 {{% /about %}}
 
