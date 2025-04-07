@@ -31,7 +31,7 @@ description = "Vi utvecklar TESSA"
 %}}
 ### Ser du din bildskärm häri?
 Vi söker systemutvecklare! Vi jobbar med kundnära utveckling och skapar användarvänliga verktyg som ger direktverkande nytta. Det finns mer.
-{{% link url="https://arbetsformedlingen.se/platsbanken/annonser/29366596" title="Ansök nu!" %}}
+{{% link url="https://arbetsformedlingen.se/platsbanken/annonser/29611703" title="Ansök nu!" %}}
 
 {{% /about %}}
 
@@ -41,7 +41,7 @@ Vi söker systemutvecklare! Vi jobbar med kundnära utveckling och skapar använ
 %}}
 ### Gillar du Sudoku, gillar du att träffa människor?
 Vi jobbar med att lösa invecklade problem åt våra kunder, tillsammans med våra kunder. Klicka vidare för att läsa mer.
-{{% link url="mailto:rekrytering@sematic.se?subject=Intresse för rollen Systemexpert" title="Visa intresse" %}}
+{{% link url="https://arbetsformedlingen.se/platsbanken/annonser/29531300" title="Ansök nu!" %}}
 
 {{% /about %}}
 
